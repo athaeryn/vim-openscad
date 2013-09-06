@@ -24,10 +24,7 @@ syn keyword openscadBoolean true false
 syn match openscadSpecialVariable "\$[a-zA-Z]\+\>" display
 syn match openscadModifier "^\s*[\*\!\#\%]" display
 
-syn match openscadNumbers "\<\d\|\.\d" contains=openscadNumber display transparent
-syn match openscadNumber "\d\+" display contained
-syn match openscadNumber "\.\d\+" display contained
-syn match openscadNumber "\-?\d\+" display contained
+syn match openscadNumber "-\?\d*\.\?\d*" display
 
 syn region openscadString start=/"/ skip=/\\"/ end=/"/
 
@@ -57,7 +54,6 @@ hi def link openscadInclude             Include
 hi def link openscadInlineComment       Comment
 hi def link openscadModifier            Special
 hi def link openscadStatement           Statement
-hi def link openscadNumbers             Number
 hi def link openscadNumber              Number
 hi def link openscadPrimitive           Type
 hi def link openscadRepeat              Repeat
